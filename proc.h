@@ -1,4 +1,12 @@
 // Per-CPU state
+
+#ifndef __PROC_H__
+#define __PROC_H__
+
+#include "types.h"
+#include "mmu.h"
+#include "param.h"
+
 struct cpu {
   uchar apicid;                // Local APIC ID
   struct context *scheduler;   // swtch() here to enter scheduler
@@ -56,3 +64,5 @@ struct proc {
 //   original data and bss
 //   fixed-size stack
 //   expandable heap
+
+#endif

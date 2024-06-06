@@ -1,3 +1,8 @@
+#ifndef __DEFS_H__
+#define __DEFS_H__
+
+#include "types.h"
+
 struct buf;
 struct context;
 struct file;
@@ -188,3 +193,5 @@ void            clearpteu(pde_t *pgdir, char *uva);
 
 // number of elements in fixed-size array
 #define NELEM(x) (sizeof(x)/sizeof((x)[0]))
+
+#endif

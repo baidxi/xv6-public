@@ -1,4 +1,6 @@
 // x86 trap and interrupt constants.
+#ifndef __TRAPS_H__
+#define __TRAPS_H__
 
 // Processor-defined:
 #define T_DIVIDE         0      // divide error
@@ -36,3 +38,4 @@
 #define IRQ_ERROR       19
 #define IRQ_SPURIOUS    31
 
+#endif

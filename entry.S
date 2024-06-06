@@ -18,6 +18,8 @@
 # 	boot
 # }
 
+#define __ASM__
+
 #include "asm.h"
 #include "memlayout.h"
 #include "mmu.h"

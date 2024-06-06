@@ -2,7 +2,6 @@
 // Search memory for MP description structures.
 // http://developer.intel.com/design/pentium/datashts/24201606.pdf
 
-#include "types.h"
 #include "defs.h"
 #include "param.h"
 #include "memlayout.h"
@@ -14,7 +13,7 @@
 struct cpu cpus[NCPU];
 int ncpu;
 uchar ioapicid;
-
+int ismp;
 static uchar
 sum(uchar *addr, int len)
 {
@@ -92,7 +91,6 @@ void
 mpinit(void)
 {
   uchar *p, *e;
-  int ismp;
   struct mp *mp;
   struct mpconf *conf;
   struct mpproc *proc;
@@ -101,7 +99,7 @@ mpinit(void)
   if((conf = mpconfig(&mp)) == 0)
     panic("Expect to run on an SMP");
   ismp = 1;
-  lapic = (uint*)conf->lapicaddr;
+  lapic = conf->lapicaddr;
   for(p=(uchar*)(conf+1), e=(uchar*)conf+conf->length; p<e; ){
     switch(*p){
     case MPPROC:

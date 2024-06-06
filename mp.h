@@ -1,8 +1,13 @@
 // See MultiProcessor Specification Version 1.[14]
 
+#ifndef __MP_H__
+#define __MP_H__
+
+#include "types.h"
+
 struct mp {             // floating pointer
   uchar signature[4];           // "_MP_"
-  void *physaddr;               // phys addr of MP config table
+  uint physaddr;               // phys addr of MP config table
   uchar length;                 // 1
   uchar specrev;                // [14]
   uchar checksum;               // all bytes must add up to 0
@@ -54,3 +59,4 @@ struct mpioapic {       // I/O APIC table entry
 
 //PAGEBREAK!
 // Blank page.
+#endif

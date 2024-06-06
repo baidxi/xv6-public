@@ -1,5 +1,6 @@
-#include "mmu.h"
+#define __ASM__
 
+#include "mmu.h"
   # vectors.S sends all traps here.
 .globl alltraps
 alltraps:
