@@ -1,3 +1,10 @@
+#ifndef __BUF_H__
+#define __BUF_H__
+
+#include "types.h"
+#include "sleeplock.h"
+#include "fs.h"
+
 struct buf {
   int flags;
   uint dev;
@@ -11,4 +18,6 @@ struct buf {
 };
 #define B_VALID 0x2  // buffer has been read from disk
 #define B_DIRTY 0x4  // buffer needs to be written to disk
+
+#endif
 
